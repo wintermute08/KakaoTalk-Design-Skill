@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=360">
+<title>Friends Example</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  .me { display: flex; align-items: center; gap: 14px; padding: 8px 16px 14px; }
+  .me .name { font-size: 16px; font-weight: 700; }
+  .row { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 16px; }
+  .row .txt { flex: 1; min-width: 0; }
+  .row .name { font-size: 15px; }
+  .row .msg { font-size: 12px; color: var(--description); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .tag { font-size: 11px; color: var(--gray550s); padding: 3px 8px; border-radius: 999px; box-shadow: inset 0 0 0 0.5px var(--gray300a); }
+  .card { margin: 6px 16px 4px; padding: 14px 16px; border-radius: 12px; background: var(--gray000s); display: flex; align-items: center; gap: 12px; }
+  .card .t1 { font-size: 14px; font-weight: 600; }
+  .card .t2 { font-size: 12px; color: var(--description); margin-top: 3px; }
+  .tabbar { margin-top: auto; height: 50px; display: flex; border-top: 0.5px solid var(--cell-border); background: var(--white000s); }
+  .tabbar div { flex: 1; display: grid; place-items: center; color: var(--gray400s); }
+  .tabbar .on { color: var(--gray900s); }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="appbar">
+    <div class="title main">친구</div>
+    <div class="action"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg></div>
+    <div class="action"><svg class="icon" viewBox="0 0 24 24"><circle cx="10" cy="9" r="3.5"/><path d="M3.5 19c.8-3.2 3.4-5 6.5-5s5.7 1.8 6.5 5M18 8v6M15 11h6"/></svg></div>
+    <div class="action"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4L18 18M6 18l1.6-1.6M16.4 7.6L18 6"/></svg></div>
+  </div>
+
+  <div class="me">
+    <div class="sq" style="width:56px;height:56px;background:#d9e4ec">나</div>
+    <div>
+      <div class="name">김디자인</div>
+      <div style="font-size:12px;color:var(--description);margin-top:4px">토큰으로 생각하기</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+  <div class="card">
+    <div style="flex:1">
+      <div class="t1">오늘 생일인 친구가 2명 있어요</div>
+      <div class="t2">축하 메시지를 보내 보세요</div>
+    </div>
+    <button class="rb s c-yellow">보내기</button>
+  </div>
+
+  <div class="section">즐겨찾기</div>
+  <div class="row">
+    <div class="sq" style="width:40px;height:40px;background:#f3d9c9">하</div>
+    <div class="txt"><div class="name">하늘</div><div class="msg">주말엔 등산</div></div>
+  </div>
+  <div class="row">
+    <div class="sq" style="width:40px;height:40px;background:#d6e8d4">도</div>
+    <div class="txt"><div class="name">도윤</div><div class="msg">프로토타입 리뷰 중</div></div>
+    <span class="tag">회의 중</span>
+  </div>
+
+  <div class="divider" style="margin-top:6px"></div>
+  <div class="section">친구 128</div>
+  <div class="row">
+    <div class="sq" style="width:40px;height:40px;background:#e2dcf1">서</div>
+    <div class="txt"><div class="name">서연</div><div class="msg">0.5dp 선이 생각보다 중요해요</div></div>
+  </div>
+  <div class="row">
+    <div class="sq" style="width:40px;height:40px;background:#f1e6c4">민</div>
+    <div class="txt"><div class="name">민준</div><div class="msg">상태 메시지가 길어지면 한 줄에서 말줄임 처리됩니다</div></div>
+  </div>
+  <div class="row">
+    <div class="sq" style="width:40px;height:40px;background:#cfe3ef">지</div>
+    <div class="txt"><div class="name">지우</div></div>
+  </div>
+  <div class="row">
+    <div class="sq" style="width:40px;height:40px;background:#efd3dc">유</div>
+    <div class="txt"><div class="name">유나</div><div class="msg">오늘도 산책</div></div>
+  </div>
+
+  <div class="tabbar">
+    <div class="on"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c1-3.6 4-5.6 7.5-5.6s6.5 2 7.5 5.6"/></svg></div>
+    <div><svg class="icon" viewBox="0 0 24 24"><path d="M12 4.5c4.7 0 8 2.9 8 6.6s-3.3 6.6-8 6.6c-.8 0-1.6-.1-2.3-.3L6 19.5l.6-3.4C4.9 14.9 4 13.1 4 11.1c0-3.7 3.3-6.6 8-6.6z"/></svg></div>
+    <div><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M15 9l-2 4.5L8.5 15l2-4.5z"/></svg></div>
+    <div><svg class="icon" viewBox="0 0 24 24"><rect x="4.5" y="6" width="15" height="12" rx="2.5"/><path d="M8 10h8M8 14h5"/></svg></div>
+    <div><svg class="icon" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18" cy="12" r="1.2"/></svg></div>
+  </div>
+</div>
+</body>
+</html>

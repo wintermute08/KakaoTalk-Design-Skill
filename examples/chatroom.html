@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=360">
+<title>Chatroom Example</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  body { background: var(--chat-bg); }
+  .screen { background: var(--chat-bg); }
+  .appbar { padding-left: 4px; }
+  .log { flex: 1; padding: 8px 6px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .date { align-self: center; margin: 6px 0 10px; font-size: 12px; padding: 4px 12px; border-radius: 999px; background: rgba(0,0,0,.10); color: rgba(0,0,0,.6); }
+  [data-theme="night"] .date { background: rgba(255,255,255,.08); color: rgba(255,255,255,.6); }
+  .you { display: flex; gap: 8px; padding-right: 40px; }
+  .you .stack { display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+  .nick { font-size: 12px; color: var(--gray990s); opacity: .85; margin: 0 0 3px 3px; }
+  .line { display: flex; align-items: flex-end; gap: 4px; }
+  .me { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding-left: 40px; padding-right: 2px; margin-top: 6px; }
+  .me .line { flex-direction: row-reverse; }
+  .bubble { max-width: 243px; min-height: 36px; padding: 9px 11px; border-radius: 14px; font-size: 14px; line-height: 1.4; color: var(--gray900s); word-break: keep-all; }
+  .you .bubble { background: var(--bubble-you); }
+  .me .bubble { background: var(--bubble-me); color: var(--on-yellow); }
+  .meta { display: flex; flex-direction: column; align-items: flex-end; font-size: 10px; color: color-mix(in srgb, var(--gray990s) 60%, transparent); line-height: 1.2; white-space: nowrap; }
+  .you .meta { align-items: flex-start; }
+  .unread { color: var(--yellow500s); font-weight: 700; }
+  .input { display: flex; align-items: flex-end; gap: 8px; padding: 6px 8px; background: var(--white000s); }
+  .input .plus { width: 34px; height: 36px; display: grid; place-items: center; color: var(--gray700s); }
+  .input .box { flex: 1; min-height: 36px; border-radius: 18px; background: var(--gray070a); display: flex; align-items: center; padding: 0 14px; font-size: 14px; color: var(--gray900s); }
+  .input .send { width: 34px; height: 34px; margin: 1px 1px; border-radius: 50%; background: var(--yellow500s); color: var(--on-yellow); display: grid; place-items: center; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="appbar">
+    <div class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></div>
+    <div class="title">디자인 스터디 <span class="count">4</span></div>
+    <div class="action"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg></div>
+    <div class="action"><svg class="icon" viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg></div>
+  </div>
+
+  <div class="log">
+    <div class="date">2026년 10월 21일 수요일</div>
+
+    <div class="you">
+      <div class="sq" style="width:36px;height:36px;background:#f3d9c9">하</div>
+      <div class="stack">
+        <div class="nick">하늘</div>
+        <div class="line"><div class="bubble">오늘 리소스 분석한 거 공유해 줄 수 있어?</div></div>
+        <div class="line"><div class="bubble">색상 이름이 숫자로 돼 있던데 규칙이 있어?</div><div class="meta"><span class="unread">1</span><span>오후 2:14</span></div></div>
+      </div>
+    </div>
+
+    <div class="me">
+      <div class="line"><div class="bubble">응, gray 뒤 숫자는 명도 순서고 s는 불투명, a는 투명도야</div></div>
+      <div class="line"><div class="bubble">다크 모드에서도 이름은 그대로고 값만 바뀌어</div><div class="meta"><span class="unread">2</span><span>오후 2:15</span></div></div>
+    </div>
+
+    <div class="you" style="margin-top:6px">
+      <div class="sq" style="width:36px;height:36px;background:#d6e8d4">도</div>
+      <div class="stack">
+        <div class="nick">도윤</div>
+        <div class="line"><div class="bubble">노란색은 다크 모드에서도 같은 값이네. 그 위 글자는 항상 진한 색이고</div><div class="meta"><span>오후 2:16</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="input">
+    <div class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12"/></svg></div>
+    <div class="box">말풍선 반경은 14로 맞췄어</div>
+    <div class="send"><svg class="icon" viewBox="0 0 24 24" style="width:20px;height:20px"><path d="M12 18V6M7 11l5-5 5 5"/></svg></div>
+  </div>
+</div>
+</body>
+</html>

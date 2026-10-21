@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=360">
+<title>Components Example</title>
+<link rel="stylesheet" href="base.css">
+<style>
+  .wrap { padding: 4px 16px 24px; display: flex; flex-direction: column; gap: 10px; }
+  h2 { font-size: 12px; font-weight: 500; color: var(--section-title); margin: 14px 0 0; }
+  .r { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .lbl { font-size: 11px; color: var(--paragraph); width: 22px; }
+  .panel { background: var(--gray000s); border-radius: 12px; padding: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .panel.dark { background: #424242; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .textbtn { font-size: 14px; font-weight: 600; color: var(--gray900s); }
+  .textbtn.gray { color: var(--gray550s); }
+  .textbtn.u { text-decoration: underline; text-underline-offset: 3px; }
+  .snack { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-radius: 10px; background: var(--snackbar-bg); color: var(--snackbar-text); font-size: 14px; }
+  .snack b { color: var(--snackbar-action); font-weight: 600; margin-left: auto; }
+  .dialog { background: var(--white000s); border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,.18); padding: 24px 24px 8px; }
+  .dialog .t { font-size: 16px; font-weight: 700; }
+  .dialog .d { font-size: 14px; color: var(--description); margin-top: 8px; line-height: 1.45; }
+  .dialog .btns { display: flex; justify-content: flex-end; gap: 4px; margin-top: 12px; }
+  .dialog .btns span { padding: 10px 12px; font-size: 15px; color: var(--blue500s); font-weight: 600; }
+  .dimbox { background: var(--dim); border-radius: 14px; padding: 24px 24px; }
+  .popup { width: 180px; background: var(--white000s); border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,.16); padding: 4px 0; }
+  .popup div { height: 48px; display: flex; align-items: center; padding: 0 16px; font-size: 15px; }
+  .popup .danger { color: var(--red500s); }
+  .sw { width: 44px; height: 26px; border-radius: 999px; background: var(--yellow500s); position: relative; }
+  .sw::after { content: ""; position: absolute; right: 3px; top: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+  .sw.off { background: var(--gray300s); }
+  .sw.off::after { right: auto; left: 3px; }
+</style>
+</head>
+<body>
+<div class="screen">
+  <div class="appbar">
+    <div class="action" style="margin-left:-12px"><svg class="icon" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></div>
+    <div class="title">컴포넌트</div>
+    <div class="action" style="font-size:15px;width:auto;padding:0 8px;font-weight:500">완료</div>
+  </div>
+  <div class="wrap">
+    <h2>Round 버튼 · 알약형 · 5단계 (36 / 32 / 30 / 28 / 25)</h2>
+    <div class="r">
+      <button class="rb xl c-yellow">XLarge</button>
+      <button class="rb l c-yellow">Large</button>
+      <button class="rb m c-yellow">Medium</button>
+      <button class="rb s c-yellow">Small</button>
+      <button class="rb xs c-yellow">XSmall</button>
+    </div>
+    <div class="panel">
+      <button class="rb l c-yellow">Yellow</button>
+      <button class="rb l c-gray">Gray</button>
+      <button class="rb l c-grayline">GrayLine</button>
+      <button class="rb l c-white">White</button>
+    </div>
+    <div class="panel dark">
+      <button class="rb l c-white">White</button>
+      <button class="rb l c-whiteline">WhiteLine</button>
+    </div>
+
+    <h2>Square 버튼 · 꽉 찬 너비 · 48 / 38 / 32 / 28</h2>
+    <button class="qb l c-yellow">확인</button>
+    <button class="qb m c-gray">나중에 하기</button>
+    <div class="grid2">
+      <button class="qb s c-line">Line</button>
+      <button class="qb s c-redline">RedLine</button>
+      <button class="qb xs c-redalpha">RedAlpha</button>
+      <button class="qb xs c-red">Red</button>
+    </div>
+
+    <h2>Text 버튼 · Black / Gray · 밑줄 선택</h2>
+    <div class="r" style="gap:18px">
+      <span class="textbtn">더보기</span>
+      <span class="textbtn gray">취소</span>
+      <span class="textbtn u">약관 보기</span>
+      <span class="textbtn gray u">도움말</span>
+    </div>
+
+    <h2>Chip · 선택은 반전으로 표시</h2>
+    <div class="r">
+      <span class="chip on">전체</span>
+      <span class="chip">친구</span>
+      <span class="chip">그룹 <span style="color:var(--gray500s)">12</span></span>
+      <span class="chip sm">최근</span>
+    </div>
+
+    <h2>Popup 메뉴 · 항목 48 / 폭 160~250</h2>
+    <div class="r" style="align-items:flex-start;gap:16px">
+      <div class="popup"><div>고정</div><div>알림 끄기</div><div class="danger">나가기</div></div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding-top:8px">
+        <div class="sw"></div><div class="sw off"></div>
+      </div>
+    </div>
+
+    <h2>Dialog · 바깥 여백 40, 안쪽 24, 버튼은 파란 텍스트</h2>
+    <div class="dimbox">
+      <div class="dialog">
+        <div class="t">채팅방을 나갈까요?</div>
+        <div class="d">나가면 대화 내용이 모두 삭제되고 채팅 목록에서도 사라져요.</div>
+        <div class="btns"><span>취소</span><span>나가기</span></div>
+      </div>
+    </div>
+
+    <h2>Snackbar · 반전 표면 + 노란 액션</h2>
+    <div class="snack">메시지를 삭제했어요 <b>실행 취소</b></div>
+  </div>
+</div>
+</body>
+</html>

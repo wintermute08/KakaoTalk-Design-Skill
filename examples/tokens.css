@@ -1,0 +1,118 @@
+/*
+ * KakaoTalk 25.7.3 리소스에서 관찰한 색상 토큰을 CSS 변수로 다시 적은 것입니다.
+ * 원본 리소스 파일이 아니라, 관찰한 수치를 옮겨 적은 학습용 재현입니다.
+ *
+ * 이름 규칙: gray{명도}{s|a}
+ *   s = solid(불투명), a = alpha(투명도 오버레이)
+ *   같은 이름이 Day/Night에서 서로 다른 값을 가진다 (daynight 토큰).
+ */
+
+:root {
+  /* surface */
+  --white000s: #ffffff;
+  --white001s: #ffffff;
+  --white002s: #ffffff;
+  --white003s: #ffffff;
+
+  /* solid gray: 숫자가 클수록 진하다 (Day 기준) */
+  --gray000s: #f7f7f7;
+  --gray001s: #f7f7f7;
+  --gray002s: #f5f5f5;
+  --gray050s: #f5f5f5;
+  --gray070s: #f0f0f0;
+  --gray300s: #cccccc;
+  --gray400s: #b2b2b2;
+  --gray500s: #949494;
+  --gray520s: #888888;
+  --gray550s: #767676;
+  --gray570s: #696969;
+  --gray600s: #595959;
+  --gray700s: #424242;
+  --gray800s: #2e2e2e;
+  --gray900s: #191919;
+  --gray990s: #000000;
+
+  /* alpha gray: Day는 검정 오버레이 */
+  --gray000a: rgba(0, 0, 0, 0.03);
+  --gray050a: rgba(0, 0, 0, 0.04);
+  --gray070a: rgba(0, 0, 0, 0.06);
+  --gray100a: rgba(0, 0, 0, 0.08);
+  --gray120a: rgba(0, 0, 0, 0.10);
+  --gray150a: rgba(0, 0, 0, 0.12);
+  --gray200a: rgba(0, 0, 0, 0.14);
+  --gray300a: rgba(0, 0, 0, 0.20);
+
+  /* accent */
+  --yellow500s: #fee500;
+  --yellow550s: #fbdd0d;
+  --blue300s: #abc1d1;
+  --blue500s: #0a73dc;
+  --red120a: rgba(244, 85, 30, 0.10);
+  --red300a: rgba(244, 85, 30, 0.30);
+  --red500s: #f4551e;
+  --green500s: #00cd3c;
+  --green600s: #05ac36;
+
+  /* semantic */
+  --title: var(--gray900s);
+  --paragraph: var(--gray500s);
+  --description: var(--gray550s);
+  --section-title: var(--gray600s);
+  --cell: var(--white000s);
+  --cell-border: var(--gray150a);
+  --cell-pressed: var(--gray050a);
+  --chat-bg: var(--blue300s);
+  --bubble-you: var(--white000s);
+  --bubble-me: var(--yellow500s);
+  --on-yellow: #191919;
+  --snackbar-bg: rgba(66, 66, 66, 0.97);
+  --snackbar-text: var(--gray001s);
+  --snackbar-action: var(--yellow500s);
+  --dim: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="night"] {
+  --white000s: #080808;
+  --white001s: #202020;
+  --white002s: #2e2e2e;
+  --white003s: #282828;
+
+  --gray000s: #151515;
+  --gray001s: #282828;
+  --gray002s: #080808;
+  --gray050s: #1a1a1a;
+  --gray070s: #1f1f1f;
+  --gray300s: #5d5d5d;
+  --gray400s: #7c7c7c;
+  --gray500s: #828282;
+  --gray520s: #979797;
+  --gray550s: #a6a6a6;
+  --gray570s: #b8b8b8;
+  --gray600s: #c9c9c9;
+  --gray700s: #dfdfdf;
+  --gray800s: #eeeeee;
+  --gray900s: #f2f2f2;
+  --gray990s: #ffffff;
+
+  /* Night는 흰색 오버레이, Day보다 한 단계 진하게 */
+  --gray000a: rgba(255, 255, 255, 0.06);
+  --gray050a: rgba(255, 255, 255, 0.08);
+  --gray070a: rgba(255, 255, 255, 0.10);
+  --gray100a: rgba(255, 255, 255, 0.12);
+  --gray120a: rgba(255, 255, 255, 0.14);
+  --gray150a: rgba(255, 255, 255, 0.16);
+  --gray200a: rgba(255, 255, 255, 0.22);
+  --gray300a: rgba(255, 255, 255, 0.35);
+
+  --blue300s: #080808;
+  --blue500s: #49a8f8;
+  --red120a: rgba(255, 120, 73, 0.14);
+  --red300a: rgba(255, 120, 73, 0.40);
+  --red500s: #ff7849;
+  --green600s: #33b85a;
+
+  --bubble-you: var(--white001s);
+  --snackbar-bg: rgba(223, 223, 223, 0.97);
+  --snackbar-text: #282828;
+  --snackbar-action: #282828;
+}
