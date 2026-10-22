@@ -12,23 +12,7 @@
 | `sources/kakaotalk-design-observations.md` | 관찰한 수치 전체 (Day/Night 색상, 타이포, 간격, 버튼·칩·채팅·다이얼로그, 반경, 그림자, 아이콘, 움직임, 태블릿) |
 | `sources/kakaotalk-ux-writing.md` | 한국어 문자열 6,551개를 집계한 문구 규칙 (말투, 확인·위험·오류·빈 상태·완료 문구, 버튼 라벨, 접근성 문구) |
 | `examples/tokens.css` | 관찰한 색상 토큰을 CSS 변수로 다시 적은 것 (Day / Night) |
-| `examples/*.html` | 토큰만으로 다시 만든 예시 화면 |
-| `img/` | 예시 화면 스크린샷 |
-
-## 예시 화면
-
-아래 화면은 이 저장소의 `examples/tokens.css`와 `examples/base.css`만으로 **새로 만든 재현 화면**입니다. 앱 스크린샷이 아니며, 카카오의 로고·아이콘·이미지·폰트를 쓰지 않았습니다. 인물과 대화는 모두 가상입니다.
-
-| 친구 목록 | 채팅방 (Day) | 채팅방 (Night) |
-|---|---|---|
-| <img src="img/friends.png" alt="친구 목록 예시" width="240"> | <img src="img/chatroom.png" alt="채팅방 라이트 모드 예시" width="240"> | <img src="img/chatroom-night.png" alt="채팅방 다크 모드 예시" width="240"> |
-
-<details>
-<summary>컴포넌트 시트 (버튼, 칩, 팝업, 다이얼로그, 스낵바)</summary>
-
-<img src="img/components.png" alt="컴포넌트 예시" width="240">
-
-</details>
+| `examples/*.html` | 토큰만으로 다시 만든 예시 화면 (브라우저로 열어 보세요) |
 
 ## 핵심 원칙 요약
 
@@ -77,13 +61,6 @@ npx skills add wintermute08/KakaoTalk-Design-Skill
 ```
 
 설치한 뒤 "카카오톡 디자인 원칙으로 설정 화면 만들어줘"처럼 요청하면 됩니다.
-
-## 예시 화면 다시 찍기
-
-```bash
-chrome-headless-shell --no-sandbox --hide-scrollbars --force-device-scale-factor=2 \
-  --window-size=360,760 --screenshot=img/friends.png "file://$PWD/examples/friends.html"
-```
 
 ## 어떻게 만들었나
 
