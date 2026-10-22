@@ -1,6 +1,6 @@
 ---
 name: kakaotalk-design
-description: Use when designing or reviewing mobile messaging, social, or everyday-utility UI that should feel calm, dense, and familiar like KakaoTalk — semantic day/night color tokens, alpha overlays, a single brand accent, pill vs full-width button roles, chat bubbles, lists, sheets, and dialogs. Principles distilled from observing KakaoTalk 25.7.3 resources; not an official guide.
+description: Use when designing or reviewing mobile messaging, social, or everyday-utility UI that should feel calm, dense, and familiar like KakaoTalk — semantic day/night color tokens, alpha overlays, a single brand accent, pill vs full-width button roles, chat bubbles, lists, sheets, dialogs, motion, and Korean UX writing (tone, confirm/error/empty/toast patterns). Principles distilled from observing KakaoTalk 25.7.3 resources; not an official guide.
 ---
 
 # Applying KakaoTalk Design Principles
@@ -9,7 +9,7 @@ description: Use when designing or reviewing mobile messaging, social, or everyd
 
 카카오톡 UI를 "노란 앱"으로 흉내 내는 게 아니라, 매일 수십 번 여는 앱이 **오래 봐도 피곤하지 않고, 어떤 배경과 모드에서도 깨지지 않게** 만드는 방식으로 다룬다.
 
-근거는 `sources/kakaotalk-design-observations.md`에 있다. 수치가 필요하면 이 문서를 인용하고, 문서에 없는 값은 추측하지 말고 "관찰 범위 밖"이라고 말한다.
+근거는 두 문서에 있다. 시각 수치는 `sources/kakaotalk-design-observations.md`, 문구 규칙은 `sources/kakaotalk-ux-writing.md`. 수치가 필요하면 이 문서를 인용하고, 문서에 없는 값은 추측하지 말고 "관찰 범위 밖"이라고 말한다.
 
 ## When to Use
 
@@ -39,6 +39,24 @@ description: Use when designing or reviewing mobile messaging, social, or everyd
 10. **위계는 굵기보다 크기와 회색 단계로 만든다.** 21 / 17 / 15 / 14 / 12, gray900 / 600 / 550 / 500.
 11. **선은 얇게.** 구분선은 0.5dp, 테두리는 alpha 12%.
 12. **모드 고정 탈출구를 준다.** 모든 컴포넌트가 daynight / dayonly / nightonly 중 하나를 고를 수 있어야 한다.
+13. **반경은 쓰임으로 정한다.** 태그 4 → 버튼 6 → 다이얼로그 8 → 시트 12 → 말풍선 14 → 카드 16. 작을수록 정보, 클수록 그릇.
+14. **그림자 대신 선과 면.** 그림자는 팝업 메뉴에만, 앱바 그림자는 스크롤할 때만 쓴다.
+15. **움직임은 150~300ms, 다이얼로그는 페이드만.** 튀는 움직임은 놀이 요소에만 쓴다.
+16. **넓은 화면에서는 폭을 고정한다.** 다이얼로그 380, 스낵바 440. 넓어진 공간은 콘텐츠를 키우는 데 쓴다.
+
+## UX Writing Principles
+
+1. **한 흐름에는 한 말투.** 새 문구는 해요체, 정책·제재·법적 고지만 합니다체.
+2. **확인은 사용자의 뜻을 높여 묻는다.** "~하시겠어요?" 목적어를 구체적으로: "채팅방을 나가시겠어요?"
+3. **위험한 행동은 질문 한 줄 + 결과 한 줄.** 결과에는 되돌릴 수 없다는 사실과 다른 사람에게 생기는 일을 쓴다. 버튼은 "확인"이 아니라 동작 이름("나가기").
+4. **오류는 무엇이 안 됐는지 → 이유 → 다음 행동.** 이유를 모르면 "일시적인 오류예요. 잠시 후 다시 시도해 주세요." 사용자를 탓하지 않는다.
+5. **빈 상태는 "없어요" + "해 보세요".** 안내할 행동이 없으면 한 줄로 끝낸다.
+6. **완료 알림은 대상이 주어인 과거형 한 문장.** "일정이 등록되었어요." 좁은 곳만 "링크 복사됨".
+7. **버튼은 문장이 아니다.** 다이얼로그는 짧은 명사(확인, 취소, 삭제), 단독 CTA는 "~하기".
+8. **차분하게.** 느낌표는 거의 쓰지 않고(1%), 이모지는 쓰지 않는다. 사용자를 "당신"이라 부르지 않고 대상을 주어로 쓴다.
+9. **제한은 가능한 범위로.** "최대 1,000자까지 입력할 수 있어요." 숫자에 천 단위 쉼표.
+10. **스크린리더 문구는 이름 → 역할 → 상태 → 위치.** "전체화면 보기, 버튼", "선택됨, 탭, 5개 중 2번째".
+11. **말투와 띄어쓰기는 린트로 강제한다.** 사람이 맞추면 "해 주세요"와 "해주세요"가 섞인다.
 
 ## Working Method
 
@@ -66,8 +84,12 @@ description: Use when designing or reviewing mobile messaging, social, or everyd
 | Square 버튼 높이 | 48 / 38 / 32 / 28, 모서리 6 / 6 / 5 / 5 |
 | 칩 | 14sp (Small 13sp), 선택 = 반전 |
 | 말풍선 | 모서리 14, 최대 폭 243, 반대편 여백 40 |
-| 다이얼로그 | 바깥 40, 안쪽 24 |
-| 팝업 항목 | 48, 폭 160~250 |
+| 말풍선 색 | 나 #FFEB33 (모드 고정) / 상대 #FFFFFF, Night #282828 |
+| 다이얼로그 | 모서리 8, 바깥 40, 안쪽 24, 태블릿 폭 380 |
+| 팝업 항목 | 48, 폭 160~250, elevation 4 |
+| 바텀시트 | 위쪽 모서리 12, 핸들 영역 20, 헤더 44 |
+| 아이콘 | 기본 24, 버튼 안 20, 텍스트 옆 16 |
+| 움직임 | 다이얼로그 페이드 200ms, 아래에서 올라오기 300ms, 시트 150ms |
 
 더 자세한 표는 `sources/kakaotalk-design-observations.md`, 바로 쓸 수 있는 CSS 변수는 `examples/tokens.css`를 본다.
 
@@ -81,6 +103,11 @@ description: Use when designing or reviewing mobile messaging, social, or everyd
 - [ ] 텍스트 버튼과 링크가 노랑이 아니라 파랑 또는 회색인가
 - [ ] 선택 상태가 반전으로 표시되는가
 - [ ] 본문에 순수 #000 / 다크 배경에 순수 #000을 쓰지 않았는가
+- [ ] 반경이 쓰임별 단계(4 / 6 / 8 / 12 / 14 / 16)를 따르는가
+- [ ] 그림자 없이도 층이 구분되는가 (선, 면 색, 다크에서는 명도)
+- [ ] 한 흐름 안에서 말투가 하나인가
+- [ ] 위험한 행동 문구에 되돌릴 수 없다는 사실과 버튼에 동작 이름이 있는가
+- [ ] 오류 문구가 사용자가 할 수 있는 행동으로 끝나는가
 - [ ] 카카오 로고, 아이콘, 캐릭터, 서비스명을 쓰지 않았는가
 
 ## Output Format
@@ -91,4 +118,5 @@ description: Use when designing or reviewing mobile messaging, social, or everyd
 2. 텍스트 위계
 3. 행동 구분 (결론 / 보조 / 위험)
 4. 화면 또는 코드
-5. 다크 모드와 배경 변화에서 확인할 점
+5. 문구 (제목, 버튼, 오류, 빈 상태, 완료 알림)
+6. 다크 모드와 배경 변화에서 확인할 점

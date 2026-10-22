@@ -8,8 +8,9 @@
 
 | 경로 | 내용 |
 |---|---|
-| `SKILL.md` | Claude Code 등에서 바로 쓰는 스킬. 핵심 원칙 12개, 작업 순서, 빠른 참조표, 리뷰 체크리스트 |
-| `sources/kakaotalk-design-observations.md` | 관찰한 수치 전체 (Day/Night 색상, 타이포, 간격, 버튼·칩·채팅·다이얼로그) |
+| `SKILL.md` | Claude Code 등에서 바로 쓰는 스킬. 디자인 원칙 16개, UX 라이팅 원칙 11개, 작업 순서, 빠른 참조표, 리뷰 체크리스트 |
+| `sources/kakaotalk-design-observations.md` | 관찰한 수치 전체 (Day/Night 색상, 타이포, 간격, 버튼·칩·채팅·다이얼로그, 반경, 그림자, 아이콘, 움직임, 태블릿) |
+| `sources/kakaotalk-ux-writing.md` | 한국어 문자열 6,551개를 집계한 문구 규칙 (말투, 확인·위험·오류·빈 상태·완료 문구, 버튼 라벨, 접근성 문구) |
 | `examples/tokens.css` | 관찰한 색상 토큰을 CSS 변수로 다시 적은 것 (Day / Night) |
 | `examples/*.html` | 토큰만으로 다시 만든 예시 화면 |
 | `img/` | 예시 화면 스크린샷 |
@@ -44,7 +45,16 @@
 11. 선은 **0.5dp**로 얇게.
 12. 모든 컴포넌트에 **Day/Night 고정 탈출구**를 둔다.
 
-자세한 수치는 [`sources/kakaotalk-design-observations.md`](sources/kakaotalk-design-observations.md)에 있습니다.
+### UX 라이팅
+
+1. 한 흐름에는 **한 말투**. 새 문구는 해요체, 정책·제재 안내만 합니다체.
+2. 확인은 **"~하시겠어요?"**로 사용자의 뜻을 묻는다.
+3. 위험한 행동은 **질문 한 줄 + 결과 한 줄**, 버튼은 동작 이름.
+4. 오류는 **무엇이 안 됐는지 → 이유 → 다음 행동**.
+5. 빈 상태는 **"없어요" + "해 보세요"**.
+6. 느낌표는 1%, 이모지는 0. **차분하게.**
+
+자세한 수치는 [`sources/kakaotalk-design-observations.md`](sources/kakaotalk-design-observations.md), 문구 규칙은 [`sources/kakaotalk-ux-writing.md`](sources/kakaotalk-ux-writing.md)에 있습니다.
 
 ## 설치
 
@@ -77,8 +87,9 @@ chrome-headless-shell --no-sandbox --hide-scrollbars --force-device-scale-factor
 
 ## 어떻게 만들었나
 
-- 공개 배포된 앱 패키지의 컴파일된 리소스(`res/values*`)를 `apktool`로 디코딩해 수치를 읽었습니다.
-- 코드에만 있는 버튼 크기는 버튼 위젯 두 개에서 숫자만 확인했습니다.
+- 공개 배포된 앱 패키지의 컴파일된 리소스(`res/values*`)를 `apktool`로 디코딩해 수치를 읽었습니다. 한국어 문구는 한국어 언어 분할 패키지에서 읽었습니다.
+- 코드에만 있는 버튼 크기는 버튼 위젯 두 개에서 숫자와 크기 매핑만 확인했습니다.
+- 말풍선 색은 9-patch 이미지 가운데 영역의 색을 측정했습니다.
 - 리소스 파일, 이미지, 아이콘, 폰트, 코드는 **저장소에 넣지 않았습니다.** 관찰한 값을 표와 원칙으로 다시 썼습니다.
 
 ## 주의

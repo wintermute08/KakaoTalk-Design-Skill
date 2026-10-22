@@ -63,7 +63,7 @@
   --cell-pressed: var(--gray050a);
   --chat-bg: var(--blue300s);
   --bubble-you: var(--white000s);
-  --bubble-me: var(--yellow500s);
+  --bubble-me: #ffeb33; /* 말풍선 전용 노랑. 브랜드 노랑보다 한 톤 밝다 */
   --on-yellow: #191919;
   --snackbar-bg: rgba(66, 66, 66, 0.97);
   --snackbar-text: var(--gray001s);
@@ -111,7 +111,7 @@
   --red500s: #ff7849;
   --green600s: #33b85a;
 
-  --bubble-you: var(--white001s);
+  --bubble-you: #282828;
   --snackbar-bg: rgba(223, 223, 223, 0.97);
   --snackbar-text: #282828;
   --snackbar-action: #282828;
