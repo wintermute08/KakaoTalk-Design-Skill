@@ -25,7 +25,7 @@
 <details>
 <summary>컴포넌트 시트 (버튼, 칩, 팝업, 다이얼로그, 스낵바)</summary>
 
-<img src="img/components.png" alt="컴포넌트 예시" width="360">
+<img src="img/components.png" alt="컴포넌트 예시" width="240">
 
 </details>
 
