@@ -20,12 +20,12 @@
 
 | 친구 목록 | 채팅방 (Day) | 채팅방 (Night) |
 |---|---|---|
-| ![친구 목록 예시](https://raw.githubusercontent.com/wintermute08/KakaoTalk-Design-Skill/main/img/friends.png) | ![채팅방 라이트 모드 예시](https://raw.githubusercontent.com/wintermute08/KakaoTalk-Design-Skill/main/img/chatroom.png) | ![채팅방 다크 모드 예시](https://raw.githubusercontent.com/wintermute08/KakaoTalk-Design-Skill/main/img/chatroom-night.png) |
+| <img src="img/friends.png" alt="친구 목록 예시" width="240"> | <img src="img/chatroom.png" alt="채팅방 라이트 모드 예시" width="240"> | <img src="img/chatroom-night.png" alt="채팅방 다크 모드 예시" width="240"> |
 
 <details>
 <summary>컴포넌트 시트 (버튼, 칩, 팝업, 다이얼로그, 스낵바)</summary>
 
-![컴포넌트 예시](https://raw.githubusercontent.com/wintermute08/KakaoTalk-Design-Skill/main/img/components.png)
+<img src="img/components.png" alt="컴포넌트 예시" width="360">
 
 </details>
 
